@@ -1,5 +1,5 @@
 {
-  "name": "bee-queue",
+  "name": "@wdx-internal/bee-queue",
   "version": "2.0.0-patch.0",
   "description": "A simple, fast, robust job/task queue, backed by Redis.",
   "main": "index.js",
@@ -41,6 +41,9 @@
     "index.d.ts",
     "lib"
   ],
+  "publishConfig": {
+        "registry": "https://npm.wdx.systems"
+    },
   "scripts": {
     "ci": "if node -e '({...0})' 2>/dev/null && node -e '\"\".trimEnd()' 2>/dev/null; then npm run lint && npm run ci:coverage && if [ -z \"$CI\" ]; then npm run ci:commitlint; fi; else ava; fi",
     "ci:commitlint": "if node -e 'async()=>{for await(var a of a);}'; then commitlint --from \"origin/${GITHUB_BASE_REF:-master}\"; fi",
